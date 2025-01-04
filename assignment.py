@@ -15,6 +15,14 @@ def fizz_buzz(number):
     >>> fizz_buzz(15)
     'FizzBuzz'
     """
+    if number % 15 == 0:
+        print("'FizzBuzz'")
+    elif number % 3 == 0:
+        print("'Fizz'")
+    elif number % 5 == 0:
+        print("'Buzz'")
+    else:
+        return number
     return
 
 
@@ -30,7 +38,10 @@ def sum_of_squares(numbers):
     >>> sum_of_squares([2, 4, 6])
     56
     """
-    return
+    sum=0
+    for x in numbers:
+        sum+=pow(x,2)
+    return sum
 
 
 # Question 3
@@ -45,7 +56,13 @@ def count_vowels(string):
     >>> count_vowels("aeiou")
     5
     """
-    return
+    vowels="aeiou"
+    string=string.lower()
+    cnt=0
+    for x in vowels:
+        if x in string:
+            cnt+=1
+    return cnt
 
 
 # Question 4
@@ -60,7 +77,13 @@ def count_repeats(string):
     >>> count_repeats("aeiou")
     0
     """
-    return
+    cnt=0
+    for c in set(string):
+        if string.count(c)>1:
+            cnt=string.count(c)
+            #as it is possible to have different repeated characters, here just return the first one.
+            break
+    return cnt
 
 
 if __name__ == "__main__":
